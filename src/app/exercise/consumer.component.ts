@@ -15,5 +15,6 @@ export class ConsumerComponent {
 
   public startSubscription(): void {
     // Use for part 2 and 3
+    this.arbiter
   }
 }

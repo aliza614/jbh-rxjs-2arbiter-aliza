@@ -10,5 +10,6 @@ export class ProducerComponent {
   }
 
   public emitItem(): void {
+    this.arbiter.emit('Hello');
   }
 }
