@@ -12,12 +12,13 @@ export class ConsumerComponent {
   }
 
   public ngOnInit(): void {
-    this.arbiter.item$.subscribe({
-      next: (item => this.lastItem = item)
-    })
+
   }
 
   public startSubscription(): void {
     // Use for part 2 and 3
+    this.arbiter.item$.subscribe({
+      next: (item => this.lastItem = item) 
+    })
   }
 }
