@@ -7,12 +7,14 @@ import { ArbiterService } from './arbiter.service';
   templateUrl: 'consumer.component.html'
 })
 export class ConsumerComponent {
-  public lastItem: Observable<string>;
+  public lastItem: string;
   constructor(private readonly arbiter: ArbiterService) {
   }
 
   public ngOnInit(): void {
-    this.lastItem = this.arbiter.myObservable$;
+    this.arbiter.item$.subscribe({
+      next: (item => this.lastItem = item)
+    })
   }
 
   public startSubscription(): void {
